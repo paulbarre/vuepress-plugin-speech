@@ -1,0 +1,21 @@
+{
+  "name": "@paulbarre/vuepress-plugin-speech",
+  "author": "Paul Barré <contact@paulbarre.co>",
+  "version": "1.0.0",
+  "description": "VuePress plugin for Web Speech API",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulbarre/vuepress-plugin-speech.git"
+  },
+  "keywords": [
+    "vuepress",
+    "plugin",
+    "web speech"
+  ],
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/paulbarre/vuepress-plugin-speech/issues"
+  },
+  "homepage": "https://github.com/paulbarre/vuepress-plugin-speech#readme"
+}
