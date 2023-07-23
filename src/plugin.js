@@ -1,4 +1,8 @@
+import TTS from './tts'
+
 export default function install (Vue, options = {}) {
+  Vue.component('tts', TTS)
+
   const speech = new Vue({
     data() {
       return {
