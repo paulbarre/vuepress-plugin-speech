@@ -1,12 +1,11 @@
-import Vue from 'vue'
-
-export default function install () {
+export default function install (Vue, options = {}) {
   const speech = new Vue({
     data() {
       return {
         synth: undefined,
         voices: [],
-        voice: undefined
+        voice: undefined,
+        lang: options.lang
       }
     },
     watch: {
@@ -27,7 +26,11 @@ export default function install () {
 
       populateVoices() {
         this.voices = this.synth.getVoices()
-          .filter(voice => /fr[-_]FR/.test(voice.lang))
+        if (this.lang) {
+          this.voices = this.voices.filter(voice => {
+            return this.lang === voice.lang.replace('_', '-')
+          })
+        }
         const defaultVoice = localStorage.getItem('voiceURI')
         if (this.voice || defaultVoice) {
           this.setVoice(this.voice ? this.voice.voiceURI : defaultVoice)
